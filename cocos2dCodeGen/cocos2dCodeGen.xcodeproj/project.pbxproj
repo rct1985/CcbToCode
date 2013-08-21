@@ -1,0 +1,272 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEF2605D1728CFF8000470D4 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEF2605C1728CFF8000470D4 /* main.mm */; };
+		CEF2606D1728DB06000470D4 /* code1.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEF2606C1728DB06000470D4 /* code1.mm */; };
+		CEF260711728EF90000470D4 /* CodeGen.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEF2606F1728EF8F000470D4 /* CodeGen.mm */; };
+		CEF2607517293F53000470D4 /* codeTemplateCpp.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEF2607417293C0E000470D4 /* codeTemplateCpp.plist */; };
+		CEF2607817294D4F000470D4 /* Match3.ccb in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEF2606E1728E473000470D4 /* Match3.ccb */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEF260571728CFF8000470D4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				CEF2607817294D4F000470D4 /* Match3.ccb in CopyFiles */,
+				CEF2607517293F53000470D4 /* codeTemplateCpp.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CEF260591728CFF8000470D4 /* cocos2dCodeGen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cocos2dCodeGen; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF2605C1728CFF8000470D4 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		CEF2605E1728CFF8000470D4 /* cocos2dCodeGen.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = cocos2dCodeGen.1; sourceTree = "<group>"; };
+		CEF2606B1728DB06000470D4 /* code1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = code1.h; sourceTree = "<group>"; };
+		CEF2606C1728DB06000470D4 /* code1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = code1.mm; sourceTree = "<group>"; };
+		CEF2606E1728E473000470D4 /* Match3.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Match3.ccb; sourceTree = "<group>"; };
+		CEF2606F1728EF8F000470D4 /* CodeGen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CodeGen.mm; path = cocos2dCodeGen/CodeGen.mm; sourceTree = "<group>"; };
+		CEF260701728EF8F000470D4 /* CodeGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeGen.h; path = cocos2dCodeGen/CodeGen.h; sourceTree = "<group>"; };
+		CEF260721728EFB5000470D4 /* utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = utility.h; path = cocos2dCodeGen/utility.h; sourceTree = "<group>"; };
+		CEF2607417293C0E000470D4 /* codeTemplateCpp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = codeTemplateCpp.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEF260561728CFF8000470D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEF260501728CFF7000470D4 = {
+			isa = PBXGroup;
+			children = (
+				CEF260721728EFB5000470D4 /* utility.h */,
+				CEF2606F1728EF8F000470D4 /* CodeGen.mm */,
+				CEF260701728EF8F000470D4 /* CodeGen.h */,
+				CEF2605B1728CFF8000470D4 /* cocos2dCodeGen */,
+				CEF2605A1728CFF8000470D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEF2605A1728CFF8000470D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEF260591728CFF8000470D4 /* cocos2dCodeGen */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF2605B1728CFF8000470D4 /* cocos2dCodeGen */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2606E1728E473000470D4 /* Match3.ccb */,
+				CEF2605C1728CFF8000470D4 /* main.mm */,
+				CEF2605E1728CFF8000470D4 /* cocos2dCodeGen.1 */,
+				CEF2606B1728DB06000470D4 /* code1.h */,
+				CEF2606C1728DB06000470D4 /* code1.mm */,
+				CEF2607417293C0E000470D4 /* codeTemplateCpp.plist */,
+			);
+			path = cocos2dCodeGen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEF260581728CFF8000470D4 /* cocos2dCodeGen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF260621728CFF8000470D4 /* Build configuration list for PBXNativeTarget "cocos2dCodeGen" */;
+			buildPhases = (
+				CEF260551728CFF8000470D4 /* Sources */,
+				CEF260561728CFF8000470D4 /* Frameworks */,
+				CEF260571728CFF8000470D4 /* CopyFiles */,
+				CEF260761729424A000470D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cocos2dCodeGen;
+			productName = cocos2dCodeGen;
+			productReference = CEF260591728CFF8000470D4 /* cocos2dCodeGen */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEF260511728CFF7000470D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = user;
+			};
+			buildConfigurationList = CEF260541728CFF7000470D4 /* Build configuration list for PBXProject "cocos2dCodeGen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEF260501728CFF7000470D4;
+			productRefGroup = CEF2605A1728CFF8000470D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEF260581728CFF8000470D4 /* cocos2dCodeGen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEF260761729424A000470D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEF260551728CFF8000470D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF2605D1728CFF8000470D4 /* main.mm in Sources */,
+				CEF2606D1728DB06000470D4 /* code1.mm in Sources */,
+				CEF260711728EF90000470D4 /* CodeGen.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CEF260601728CFF8000470D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					TARGET_OS_MAC,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
+					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CEF260611728CFF8000470D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = TARGET_OS_MAC;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
+					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CEF260631728CFF8000470D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CEF260641728CFF8000470D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEF260541728CFF7000470D4 /* Build configuration list for PBXProject "cocos2dCodeGen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF260601728CFF8000470D4 /* Debug */,
+				CEF260611728CFF8000470D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF260621728CFF8000470D4 /* Build configuration list for PBXNativeTarget "cocos2dCodeGen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF260631728CFF8000470D4 /* Debug */,
+				CEF260641728CFF8000470D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEF260511728CFF7000470D4 /* Project object */;
+}

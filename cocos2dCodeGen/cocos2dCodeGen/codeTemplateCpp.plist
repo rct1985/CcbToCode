@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CallBackMenu.txt</key>
+	<string>void %class_name%::%menu_call%(cocos2d::CCObject * pSender)
+{
+
+
+}
+
+</string>
+	<key>CallBackControl.txt</key>
+	<string>void %class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+
+
+}
+
+</string>
+	<key>GlueControlCallBack.txt</key>
+	<string>SEL_CCControlHandler %class_name%::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, cocos2d::CCString *pSelectorName)
+{
+</string>
+	<key>GlueAssignMember.txt</key>
+	<string>bool %class_name%::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, cocos2d::CCString *pMemberVariableName, cocos2d::CCNode *pNode)
+{</string>
+	<key>CppHeader.txt</key>
+	<string>//
+//  %class_name%.cpp
+//  
+//
+//  this file is auto generate by the tool created by neo.
+//
+//
+
+
+#include &quot;%class_name%.h&quot;
+using namespace cocos2d;
+using namespace cocos2d::extension;
+
+void %class_name%::onNodeLoaded(cocos2d::CCNode *pNode, cocos2d::extension::CCNodeLoader *pNodeLoader)
+{
+}
+
+
+
+
+</string>
+	<key>GlueCustomMember.txt</key>
+	<string>bool %class_name%::onAssignCCBCustomProperty(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::extension::CCBValue *pCCBValue)
+{
+    if (pTarget == this)
+    {
+</string>
+	<key>GlueMenuCallBack.txt</key>
+	<string>SEL_MenuHandler %class_name%::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTarget, cocos2d::CCString *pSelectorName)
+{
+</string>
+	<key>CallBackMenuDec.txt</key>
+	<string>	void %menu_call%(cocos2d::CCObject * pSender);
+</string>
+	<key>CallBackCControlDec.txt</key>
+	<string>	void %control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+</string>
+	<key>InterfaceDec.txt</key>
+	<string>protected:
+    virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, cocos2d::CCString * pSelectorName);
+    virtual cocos2d::extension::SEL_CCControlHandler onResolveCCBCCControlSelector(cocos2d::CCObject * pTarget, cocos2d::CCString * pSelectorName);
+    virtual bool onAssignCCBMemberVariable(cocos2d::CCObject * pTarget, cocos2d::CCString * pMemberVariableName, cocos2d::CCNode * pNode);
+    virtual void onNodeLoaded(cocos2d::CCNode * pNode, cocos2d::extension::CCNodeLoader * pNodeLoader);
+    virtual bool onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, cocos2d::extension:: CCBValue* pCCBValue);
+</string>
+	<key>ClassDec.txt</key>
+	<string>//
+//  %class_name%.h
+//  
+//
+//  this code is auto generate by the tool created by neo. Email andsonliang@gmail.com
+//
+//
+
+#ifndef __autogen_ccbuilder__%class_name%__
+#define __autogen_ccbuilder__%class_name%__
+
+#include &quot;cocos2d.h&quot;
+#include &quot;cocos-ext.h&quot;
+
+class %class_name%
+:public cocos2d::%base_class%
+, public cocos2d::extension::CCBSelectorResolver
+, public cocos2d::extension::CCBMemberVariableAssigner
+, public cocos2d::extension::CCNodeLoaderListener
+
+{
+public:
+    %class_name%()
+    :%base_class%()</string>
+</dict>
+</plist>
