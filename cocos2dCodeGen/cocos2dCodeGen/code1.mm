@@ -12,6 +12,7 @@
 @implementation code1
 @synthesize baseClassName = m_baseClassName;
 @synthesize className = m_className;
+@synthesize pureClassName = m_pureClassName;
 @synthesize asMember = m_listAssignMember;
 @synthesize cuMember = m_listCutomProperty;
 @synthesize controlCalls = m_listCContorlCallBack;
@@ -66,15 +67,24 @@
         {
             NSString* menuCallback = [value objectAtIndex:0];
             if (menuCallback ) {
-                m_listMenuCallBack.push_back([menuCallback UTF8String]);
- 
+                //>=-Rct-=< only the new one is pushed back here
+                std::string l_strContent = [menuCallback UTF8String];
+                std::vector<std::string>::iterator l_iter = std::find(m_listMenuCallBack.begin(), m_listMenuCallBack.end(), l_strContent);
+                if(l_iter == m_listMenuCallBack.end()){
+                    m_listMenuCallBack.push_back([menuCallback UTF8String]);
+                }
             }
         }
         else if ([type isEqualToString:@"BlockCCControl"])
         {
             NSString* cccallback = [value objectAtIndex:0];
             if (cccallback) {
-                m_listCContorlCallBack.push_back([cccallback UTF8String]);
+                //>=-Rct-=< only the new one is pushed back here
+                std::string l_strContent = [cccallback UTF8String];
+                std::vector<std::string>::iterator l_iter = std::find(m_listCContorlCallBack.begin(), m_listCContorlCallBack.end(), l_strContent);
+                if(l_iter == m_listCContorlCallBack.end()){
+                    m_listCContorlCallBack.push_back([cccallback UTF8String]);
+                }
             }
         }
     }
@@ -124,6 +134,9 @@
         return;
     }
     m_className = [className UTF8String];
+    //>=-Rct-=<
+    m_pureClassName = [[className substringToIndex:[className length] - 4] UTF8String];
+    
     m_baseClassName = [[nodeGraph objectForKey:@"baseClass"] UTF8String];
     if (m_className == "") {
         return;

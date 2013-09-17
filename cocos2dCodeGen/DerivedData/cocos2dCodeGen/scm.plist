@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>FoundWorkingCopyPaths</key>
-	<array/>
+	<array>
+		<string>/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen</string>
+	</array>
 	<key>LastWorkingCopyScanDate</key>
-	<date>2013-08-21T03:15:44Z</date>
+	<date>2013-09-17T07:15:34Z</date>
 	<key>MissingFilePaths</key>
 	<array/>
 	<key>Version</key>

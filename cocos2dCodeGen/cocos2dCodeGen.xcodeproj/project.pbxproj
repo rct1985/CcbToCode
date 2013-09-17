@@ -11,7 +11,6 @@
 		CEF2606D1728DB06000470D4 /* code1.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEF2606C1728DB06000470D4 /* code1.mm */; };
 		CEF260711728EF90000470D4 /* CodeGen.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEF2606F1728EF8F000470D4 /* CodeGen.mm */; };
 		CEF2607517293F53000470D4 /* codeTemplateCpp.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEF2607417293C0E000470D4 /* codeTemplateCpp.plist */; };
-		CEF2607817294D4F000470D4 /* Match3.ccb in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEF2606E1728E473000470D4 /* Match3.ccb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,7 +20,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				CEF2607817294D4F000470D4 /* Match3.ccb in CopyFiles */,
 				CEF2607517293F53000470D4 /* codeTemplateCpp.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,12 +29,10 @@
 /* Begin PBXFileReference section */
 		CEF260591728CFF8000470D4 /* cocos2dCodeGen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cocos2dCodeGen; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF2605C1728CFF8000470D4 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		CEF2605E1728CFF8000470D4 /* cocos2dCodeGen.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = cocos2dCodeGen.1; sourceTree = "<group>"; };
 		CEF2606B1728DB06000470D4 /* code1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = code1.h; sourceTree = "<group>"; };
 		CEF2606C1728DB06000470D4 /* code1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = code1.mm; sourceTree = "<group>"; };
-		CEF2606E1728E473000470D4 /* Match3.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Match3.ccb; sourceTree = "<group>"; };
-		CEF2606F1728EF8F000470D4 /* CodeGen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CodeGen.mm; path = cocos2dCodeGen/CodeGen.mm; sourceTree = "<group>"; };
-		CEF260701728EF8F000470D4 /* CodeGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeGen.h; path = cocos2dCodeGen/CodeGen.h; sourceTree = "<group>"; };
+		CEF2606F1728EF8F000470D4 /* CodeGen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CodeGen.mm; sourceTree = "<group>"; };
+		CEF260701728EF8F000470D4 /* CodeGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeGen.h; sourceTree = "<group>"; };
 		CEF260721728EFB5000470D4 /* utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = utility.h; path = cocos2dCodeGen/utility.h; sourceTree = "<group>"; };
 		CEF2607417293C0E000470D4 /* codeTemplateCpp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = codeTemplateCpp.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,8 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF260721728EFB5000470D4 /* utility.h */,
-				CEF2606F1728EF8F000470D4 /* CodeGen.mm */,
-				CEF260701728EF8F000470D4 /* CodeGen.h */,
 				CEF2605B1728CFF8000470D4 /* cocos2dCodeGen */,
 				CEF2605A1728CFF8000470D4 /* Products */,
 			);
@@ -74,9 +68,9 @@
 		CEF2605B1728CFF8000470D4 /* cocos2dCodeGen */ = {
 			isa = PBXGroup;
 			children = (
-				CEF2606E1728E473000470D4 /* Match3.ccb */,
+				CEF2606F1728EF8F000470D4 /* CodeGen.mm */,
+				CEF260701728EF8F000470D4 /* CodeGen.h */,
 				CEF2605C1728CFF8000470D4 /* main.mm */,
-				CEF2605E1728CFF8000470D4 /* cocos2dCodeGen.1 */,
 				CEF2606B1728DB06000470D4 /* code1.h */,
 				CEF2606C1728DB06000470D4 /* code1.mm */,
 				CEF2607417293C0E000470D4 /* codeTemplateCpp.plist */,

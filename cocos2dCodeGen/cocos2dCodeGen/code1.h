@@ -15,6 +15,7 @@
 {
     std::string m_baseClassName;
     std::string m_className;
+    std::string m_pureClassName;
     std::vector<TypeName> m_listAssignMember;
     std::vector<TypeName> m_listCutomProperty;
     std::vector<std::string> m_listCContorlCallBack;
@@ -23,6 +24,7 @@
 
 @property std::string baseClassName;
 @property std::string className;
+@property std::string pureClassName;
 @property std::vector<TypeName> asMember;
 @property std::vector<TypeName> cuMember;
 @property std::vector<std::string> controlCalls;

@@ -30,6 +30,9 @@ std::string m_interfaceDec;
 std::string m_callBackControlDec;
 std::string m_callBackMenuDec;
 
+std::string g_ctrlClassHeadFileContent;
+std::string g_ctrlClassCppFileContent;
+
 const static std::set<std::string> cocos2dClass =
 {
     "CCNode",
@@ -82,10 +85,27 @@ std::string ReadTemplateFromDic(const std::string& fileName,NSDictionary * templ
                        );
 
 }
+
 CodeGen::CodeGen(std::ostream& h,std::ostream& c)
-:m_header(h),m_cpp(c)
+:m_header(h)
+,m_cpp(c)
+,m_ctrlHeader(h)
+,m_ctrlCpp(c)
 {
-    //read header dec
+    this->init();
+}
+
+
+CodeGen::CodeGen(std::ostream& p_head, std::ostream& p_cpp, std::ostream& p_ctrlHead, std::ostream& p_ctrlCpp)
+:m_header(p_head)
+,m_cpp(p_cpp)
+,m_ctrlHeader(p_ctrlHead)
+,m_ctrlCpp(p_ctrlCpp)
+{
+    this->init();
+}
+
+void CodeGen::init(){
     //read
     if (m_cppHeader == "") {
         NSString *codeTemplatePath = [[NSBundle mainBundle] pathForResource:@"codeTemplateCpp" ofType:@"plist"];
@@ -106,9 +126,10 @@ CodeGen::CodeGen(std::ostream& h,std::ostream& c)
         m_callBackMenu = ReadTemplateFromDic("CallBackMenu.txt",templateCppCode);
         
         m_loaderInnerClass = ReadTemplateFromDic("Loader.txt",templateCppCode);
+        
+        g_ctrlClassHeadFileContent = ReadTemplateFromDic("CtrlClassDec.txt",templateCppCode);
+        g_ctrlClassCppFileContent = ReadTemplateFromDic("CtrlCppContent.txt",templateCppCode);
     }
-
-    
 }
 
 
@@ -118,6 +139,7 @@ void CodeGen::GenerateClassDec()
     std::string classDec = m_classDec;
     string_replace(classDec, "%class_name%", m_className);
     string_replace(classDec, "%base_class%", m_baseClass);
+    string_replace(classDec, "%ctrl_class%", m_pureClassName);
     m_header<< classDec<<"\n";
     
     //initialize member or custom member
@@ -174,6 +196,7 @@ void CodeGen::GenerateCallBackControlDec()
     m_header << "\n //control call back function;\n";
     m_header << "protected:" << std::endl;
     for (auto iter = m_listCContorlCallBack.cbegin(); iter != m_listCContorlCallBack.cend(); ++iter) {
+        
         std::string call_control = m_callBackControlDec;
         string_replace(call_control, "%control_call%", *iter);
         m_header << call_control;
@@ -240,12 +263,27 @@ void CodeGen::GenerateCustomMemberDec()
     }
 }
 
+void CodeGen::GenerateCtrlClassDec(){
+    m_ctrlClassPointMember = m_pureClassName;
+    transform(m_ctrlClassPointMember.begin(), m_ctrlClassPointMember.begin() + 1, m_ctrlClassPointMember.begin(), ::tolower);
+    m_ctrlClassPointMember = "m_" + m_ctrlClassPointMember;
+    m_header << "\n //ctrl class \n";
+    m_header << "protected:" <<std::endl;
+    m_header << "\tCC_SYNTHESIZE("<< m_pureClassName<<"*, "<< m_ctrlClassPointMember <<", "<<m_pureClassName<< ");\n";
+}
+
 void CodeGen::GeneateClassEnd()
 {
     m_header << "};\n#endif\n";
     
 }
 
+void CodeGen::GenerateCtrlClassHeadFile(){
+    std::string classDec = g_ctrlClassHeadFileContent;
+    string_replace(classDec, "%class_name%", m_className);
+    string_replace(classDec, "%ctrl_class_name%", m_pureClassName);
+    m_ctrlHeader<< classDec<<"\n";
+}
 
 #pragma mark cpp File
 void CodeGen::GenerateCppHeader()
@@ -263,6 +301,7 @@ void CodeGen::GenerateCallBackControl()
         std::string callBackImpli = m_callBackControl;
         string_replace(callBackImpli, "%class_name%", m_className);
         string_replace(callBackImpli, "%control_call%", fName);
+        string_replace(callBackImpli, "%ctrl_class_member%", m_ctrlClassPointMember);
         m_cpp << callBackImpli ;
 
     }
@@ -276,6 +315,7 @@ void CodeGen::GenerateCallBackMenu()
         std::string callBackImpli = m_callBackMenu;
         string_replace(callBackImpli, "%class_name%", m_className);
         string_replace(callBackImpli, "%menu_call%", fName);
+        string_replace(callBackImpli, "%ctrl_class_member%", m_ctrlClassPointMember);
         m_cpp << callBackImpli;
     }
     m_cpp << "// end menu call back\n\n";
@@ -359,6 +399,13 @@ void CodeGen::GlueCustomMember()
     m_cpp << "\t}\n";
     m_cpp << "\treturn false;\n";
     m_cpp << "}\n\n";
+}
+
+void CodeGen::GenerateCtrlClassCppFile(){
+    std::string classContent = g_ctrlClassCppFileContent;
+    string_replace(classContent, "%class_name%", m_className);
+    string_replace(classContent, "%ctrl_class_name%", m_pureClassName);
+    m_ctrlCpp << classContent<<"\n";
 }
 
 

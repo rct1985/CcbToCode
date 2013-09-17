@@ -12,28 +12,40 @@
 #include <fstream>
 
 
-void GenerateToTargetDic(NSString* path, NSString* p_targetDir)
+void GenerateToTargetDic(NSString* path, NSString* p_targetDir, NSString* p_targetCtrlDir)
 {
     code1* c = [[code1 alloc] init];
     [c parserWithFile:path];
     
-    std::ofstream header,cpp;
+    //CCB Class
+    std::ofstream l_headerFile;
+    std::ofstream l_cppFile;
+    //Ctrl Class
+    std::ofstream l_ctrHeadFile;
+    std::ofstream l_ctrCppFile;
     
     //std::string dir = [path UTF8String];
     //std::size_t pos = dir.find_last_of('/');
     //dir = dir.substr(0,pos+1);
     //dir += [p_targetDir UTF8String];
-    std::string dir = [p_targetDir UTF8String];
+    std::string l_targetDir = [p_targetDir UTF8String];
+    std::string l_targetCtrlDir = [p_targetCtrlDir UTF8String];
     NSFileManager * manager = [NSFileManager defaultManager];
-    if (![manager fileExistsAtPath:[NSString stringWithFormat:@"%s",dir.c_str() ]]) {
+    if (![manager fileExistsAtPath:[NSString stringWithFormat:@"%s",l_targetDir.c_str() ]]) {
         NSError* error;
-        [manager createDirectoryAtPath:[NSString stringWithFormat:@"%s",dir.c_str()] withIntermediateDirectories:YES attributes:nil error:&error];
+        [manager createDirectoryAtPath:[NSString stringWithFormat:@"%s",l_targetDir.c_str()] withIntermediateDirectories:YES attributes:nil error:&error];
     }
-    dir += c.className;
-    header.open(dir + ".h");
-    cpp.open(dir + ".cpp");
-    CodeGen gn(header,cpp);
+    l_targetDir += c.className;
+    l_targetCtrlDir += c.pureClassName;
+    
+    l_headerFile.open(l_targetDir + ".h");
+    l_cppFile.open(l_targetDir + ".cpp");
+    l_ctrHeadFile.open(l_targetCtrlDir + ".h");
+    l_ctrCppFile.open(l_targetCtrlDir + ".cpp");
+    
+    CodeGen gn(l_headerFile,l_cppFile, l_ctrHeadFile, l_ctrCppFile);
     gn.m_className = c.className;
+    gn.m_pureClassName = c.pureClassName;
     gn.m_baseClass = c.baseClassName;
     gn.m_listMenuCallBack = c.menuCalls;
     gn.m_listCContorlCallBack = c.controlCalls;
@@ -46,7 +58,7 @@ void GenerateToTargetDic(NSString* path, NSString* p_targetDir)
 
 
 void Generate(NSString* path){
-    GenerateToTargetDic(path, @"./");
+    GenerateToTargetDic(path, @"./", @"./");
 }
 
 int main(int argc, const char * argv[])
@@ -58,9 +70,11 @@ int main(int argc, const char * argv[])
     NSString* currentDir = [[NSBundle mainBundle] bundlePath];
     NSString* ccbDir  = [NSString stringWithFormat:@"%s", argv[1]];
     NSString* targetDir = [NSString stringWithFormat:@"%s", argv[2]];
+    NSString* targetCtrlDir = [NSString stringWithFormat:@"%s", argv[3]];
     NSLog(@"current dir:%@",currentDir);
     NSLog(@"ccbDir dir:%@",ccbDir);
     NSLog(@"targetDir dir:%@",targetDir);
+    NSLog(@"targetCtrlDir dir:%@", targetCtrlDir);
     
 
     NSError *error = nil;
@@ -83,7 +97,7 @@ int main(int argc, const char * argv[])
     NSLog(@"All folders:%@",ccbFiles);
     for (NSString* ccb in ccbFiles) {
         if(argc > 2){
-            GenerateToTargetDic(ccb, targetDir);
+            GenerateToTargetDic(ccb, targetDir, targetCtrlDir);
         }else{
             Generate(ccb);
         }

@@ -2,86 +2,71 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CallBackMenu.txt</key>
-	<string>void %class_name%::%menu_call%(cocos2d::CCObject * pSender)
+<key>CallBackMenu.txt</key>
+<string>void %class_name%::%menu_call%(cocos2d::CCObject * pSender)
 {
-
-
+	//feel free to modify code below
+	%ctrl_class_member%-&gt;%menu_call%(pSender);
 }
-
 </string>
-	<key>CallBackControl.txt</key>
-	<string>void %class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+
+<key>CallBackControl.txt</key>
+<string>void %class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
 {
-
-
+	//feel free to modify code below
+	%ctrl_class_member%-&gt;%control_call%(pSender, pCCControlEvent);
 }
-
 </string>
-	<key>GlueControlCallBack.txt</key>
-	<string>SEL_CCControlHandler %class_name%::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
+
+<key>GlueControlCallBack.txt</key>
+<string>SEL_CCControlHandler %class_name%::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 {
 </string>
-	<key>GlueAssignMember.txt</key>
-	<string>bool %class_name%::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::CCNode *pNode)
+
+<key>GlueAssignMember.txt</key>
+<string>bool %class_name%::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::CCNode *pNode)
 {</string>
-	<key>CppHeader.txt</key>
-	<string>//
-//  %class_name%.cpp
-//  
-//
-//  this code is auto generate by the tool created by neo. Email andsonliang@gmail.com
-//  and improved by TerrenceRao. Email rcttobattle@gmail.com
-//
-//
 
-
-#include &quot;%class_name%.h&quot;
-using namespace cocos2d;
-using namespace cocos2d::extension;
-
-void %class_name%::onNodeLoaded(cocos2d::CCNode *pNode, cocos2d::extension::CCNodeLoader *pNodeLoader)
-{
-}
-
-
-
-
-</string>
-	<key>GlueCustomMember.txt</key>
-	<string>bool %class_name%::onAssignCCBCustomProperty(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::extension::CCBValue *pCCBValue)
+<key>GlueCustomMember.txt</key>
+<string>bool %class_name%::onAssignCCBCustomProperty(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::extension::CCBValue *pCCBValue)
 {
     if (pTarget == this)
     {
 </string>
-	<key>GlueMenuCallBack.txt</key>
-	<string>SEL_MenuHandler %class_name%::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
+
+<key>GlueMenuCallBack.txt</key>
+<string>SEL_MenuHandler %class_name%::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 {
 </string>
-	<key>CallBackMenuDec.txt</key>
-	<string>	void %menu_call%(cocos2d::CCObject * pSender);
+
+<key>CallBackMenuDec.txt</key>
+<string>	void %menu_call%(cocos2d::CCObject * pSender);
 </string>
-	<key>CallBackCControlDec.txt</key>
-	<string>	void %control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+
+<key>CallBackCControlDec.txt</key>
+<string>	void %control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
 </string>
-	<key>InterfaceDec.txt</key>
-	<string>protected:
+
+<key>InterfaceDec.txt</key>
+<string>protected:
     virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName);
     virtual cocos2d::extension::SEL_CCControlHandler onResolveCCBCCControlSelector(cocos2d::CCObject * pTarget, const char * pSelectorName);
     virtual bool onAssignCCBMemberVariable(cocos2d::CCObject * pTarget, const char * pMemberVariableName, cocos2d::CCNode * pNode);
     virtual void onNodeLoaded(cocos2d::CCNode * pNode, cocos2d::extension::CCNodeLoader * pNodeLoader);
     virtual bool onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, cocos2d::extension:: CCBValue* pCCBValue);
 </string>
-	<key>Loader.txt</key>
-	<string>class %loader_name% : public cocos2d::extension::%super_loader_name%
+
+<key>Loader.txt</key>
+<string>class %loader_name% : public cocos2d::extension::%super_loader_name%
 {
 public:
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(%loader_name%, loader);
 protected:
     CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(%class_name%);
 };</string>
-	<key>ClassDec.txt</key>
-	<string>//
+
+<key>ClassDec.txt</key>
+<string>//
 //  %class_name%.h
 //  
 //
@@ -95,6 +80,7 @@ protected:
 #include &quot;cocos2d.h&quot;
 #include &quot;cocos-ext.h&quot;
 
+class %ctrl_class%;
 
 class %class_name%
 :public cocos2d::%base_class%
@@ -105,6 +91,118 @@ class %class_name%
 {
 public:
     %class_name%()
-    :%base_class%()</string>
+    :%base_class%()
+</string>
+
+<key>CppHeader.txt</key>
+<string>//
+//  %class_name%.cpp
+//  
+//
+//  this code is auto generate by the tool created by neo. Email andsonliang@gmail.com
+//  and improved by TerrenceRao. Email rcttobattle@gmail.com
+//
+//
+
+#include &quot;%class_name%.h&quot;
+using namespace cocos2d;
+using namespace cocos2d::extension;
+
+void %class_name%::onNodeLoaded(cocos2d::CCNode *pNode, cocos2d::extension::CCNodeLoader *pNodeLoader)
+{
+}
+</string>
+
+<key>CtrlClassDec.txt</key>
+<string>//
+//  %ctrl_class_name%.h
+//  
+//
+//  this code is auto generate by the tool created by neo. Email andsonliang@gmail.com
+//  and improved by TerrenceRao. Email rcttobattle@gmail.com
+//  feel free to modify this class
+//
+
+#ifndef __autogen_ccbuilder__%ctrl_class_name%__
+#define __autogen_ccbuilder__%ctrl_class_name%__
+
+#include &quot;Global/Constants.h&quot;
+#include &quot;%class_name%.h&quot;
+
+class %ctrl_class_name%
+:public cocos2d::CCLayer
+{
+public:
+    %ctrl_class_name%();
+    virtual ~%ctrl_class_name%();
+
+    CREATE_FUNC(%ctrl_class_name%);
+    bool init();
+    
+    void initCCB();
+    void giveValueToCCB();
+
+private:
+    cocos2d::extension::CCBReader* m_ccbReader;
+    %class_name%* m_ccbMember;
+};
+#endif
+</string>
+
+<key>CtrlCppContent.txt</key>
+<string>//
+//  %ctrl_class_name%.cpp
+//  
+//
+//  this code is auto generate by the tool created by neo. Email andsonliang@gmail.com
+//  and improved by TerrenceRao. Email rcttobattle@gmail.com
+//  feel free to modify this class
+//
+
+#include &quot;%ctrl_class_name%.h&quot;
+using namespace std;
+using namespace cocos2d;
+using namespace cocos2d::extension;
+
+%ctrl_class_name%::%ctrl_class_name%(){
+}
+%ctrl_class_name%::~%ctrl_class_name%(){
+}
+bool %ctrl_class_name%::init(){
+    bool l_bResult = true;
+    do{
+        if(!CCLayer::init()){
+            l_bResult = false;
+        }
+        this->initCCB();
+        this->giveValueToCCB();
+    }while(0);
+    return l_bResult;
+}
+
+void %ctrl_class_name%::initCCB(){
+    CCNodeLoaderLibrary *lib = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    lib->registerCCNodeLoader(&quot;%class_name%&quot;, %class_name%::%ctrl_class_name%_CCBLoader::loader());
+
+    //read ccbi file
+    m_ccbReader = new CCBReader( lib );
+    //m_ccbReader->setResolutionScale(2.0f);
+    m_ccbMember = (BattleBeginInfo_CCB*)m_ccbReader->readNodeGraphFromFile("BattleBeginInfo.ccbi", this);
+
+    //CCB
+    m_ccbMember->setPosition(ccu(0, 0));
+    //fill border
+    this->addChild(m_ccbMember);
+}
+
+void %ctrl_class_name%::giveValueToCCB(){
+    //do what your want here
+}
+
+</string>
+
+
+
+
 </dict>
 </plist>
