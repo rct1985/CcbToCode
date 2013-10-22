@@ -30,8 +30,11 @@ std::string m_interfaceDec;
 std::string m_callBackControlDec;
 std::string m_callBackMenuDec;
 
-std::string g_ctrlClassHeadFileContent;
+std::string g_ctrlClassHeadFileContent; //head for .h
+std::string g_ctrlClassEndFileContent;  //end for .h
 std::string g_ctrlClassCppFileContent;
+std::string g_ctrlCallBackControl;
+std::string g_ctrlCallBackMenu;
 
 const static std::set<std::string> cocos2dClass =
 {
@@ -127,8 +130,12 @@ void CodeGen::init(){
         
         m_loaderInnerClass = ReadTemplateFromDic("Loader.txt",templateCppCode);
         
-        g_ctrlClassHeadFileContent = ReadTemplateFromDic("CtrlClassDec.txt",templateCppCode);
+        g_ctrlClassHeadFileContent = ReadTemplateFromDic("CtrlClassDecHead.txt",templateCppCode);
+        g_ctrlClassEndFileContent = ReadTemplateFromDic("CtrlClassDecEnd.txt",templateCppCode);
         g_ctrlClassCppFileContent = ReadTemplateFromDic("CtrlCppContent.txt",templateCppCode);
+        
+        g_ctrlCallBackControl = ReadTemplateFromDic("CtrlCallBackControl.txt",templateCppCode);
+        g_ctrlCallBackMenu = ReadTemplateFromDic("CtrlCallBackMenu.txt",templateCppCode);
     }
 }
 
@@ -191,25 +198,45 @@ void CodeGen::GenerateInterfaceDec()
     m_header << "\n//virtual function from base !\n";
     m_header << m_interfaceDec;
 }
-void CodeGen::GenerateCallBackControlDec()
+void CodeGen::GenerateCallBackControlDec(bool p_bIsCtrlClass)
 {
-    m_header << "\n //control call back function;\n";
-    m_header << "protected:" << std::endl;
+    if(p_bIsCtrlClass){
+        m_ctrlHeader << "\n //control call back function;\n";
+        m_ctrlHeader << "public:" << std::endl;
+    }else{
+        m_header << "\n //control call back function;\n";
+        m_header << "protected:" << std::endl;
+    }
+    
     for (auto iter = m_listCContorlCallBack.cbegin(); iter != m_listCContorlCallBack.cend(); ++iter) {
         
-        std::string call_control = m_callBackControlDec;
+        std::string call_control = m_callBackControlDec;        
         string_replace(call_control, "%control_call%", *iter);
-        m_header << call_control;
+        if(p_bIsCtrlClass){
+            m_ctrlHeader << call_control;
+        }else{
+            m_header << call_control;
+        }
     }
 }
-void CodeGen::GenerateCallBackMenuDec()
+void CodeGen::GenerateCallBackMenuDec(bool p_bIsCtrlClass)
 {
-    m_header << "\n // menu call back fuction \n";
-    m_header << "protected:" << std::endl;
+    if(p_bIsCtrlClass){
+        m_ctrlHeader << "\n // menu call back fuction \n";
+        m_ctrlHeader << "public:" << std::endl;
+    }else{
+        m_header << "\n // menu call back fuction \n";
+        m_header << "protected:" << std::endl;
+    }
+    
     for (auto iter = m_listMenuCallBack.cbegin(); iter != m_listMenuCallBack.cend(); ++iter) {
         std::string call_menu = m_callBackMenuDec;
         string_replace(call_menu, "%menu_call%", *iter);
-        m_header << call_menu;
+        if(p_bIsCtrlClass){
+            m_ctrlHeader << call_menu;
+        }else{
+            m_header << call_menu;
+        }
     }
 }
 
@@ -284,41 +311,72 @@ void CodeGen::GenerateCtrlClassHeadFile(){
     string_replace(classDec, "%ctrl_class_name%", m_pureClassName);
     m_ctrlHeader<< classDec<<"\n";
 }
+void CodeGen::GenerateCtrlClassEndFile(){
+    std::string classDec = g_ctrlClassEndFileContent;
+    string_replace(classDec, "%class_name%", m_className);
+    string_replace(classDec, "%ctrl_class_name%", m_pureClassName);
+    m_ctrlHeader<< classDec<<"\n";
+}
 
 #pragma mark cpp File
 void CodeGen::GenerateCppHeader()
 {
     std::string cppHeader = m_cppHeader;
     string_replace(cppHeader, "%class_name%", m_className);
+    string_replace(cppHeader, "%ctrl_class_name%", m_pureClassName);
     m_cpp << cppHeader;
 }
 
-void CodeGen::GenerateCallBackControl()
+void CodeGen::GenerateCallBackControl(bool p_bIsCtrlClass)
 {
-    m_cpp << "//control button call back  here ;\n";
-    for(const std::string& fName : m_listCContorlCallBack)
-    {
-        std::string callBackImpli = m_callBackControl;
-        string_replace(callBackImpli, "%class_name%", m_className);
-        string_replace(callBackImpli, "%control_call%", fName);
-        string_replace(callBackImpli, "%ctrl_class_member%", m_ctrlClassPointMember);
-        m_cpp << callBackImpli ;
-
+    if(p_bIsCtrlClass){
+        m_ctrlCpp << "//control button call back  here ;\n";
+        for(const std::string& fName : m_listCContorlCallBack)
+        {
+            std::string callBackImpli = g_ctrlCallBackControl;
+            string_replace(callBackImpli, "%ctrl_class_name%", m_pureClassName);
+            string_replace(callBackImpli, "%control_call%", fName);
+            m_ctrlCpp << callBackImpli ;
+        }
+        m_ctrlCpp << "// end control call back\n\n";
+    }else{
+        m_cpp << "//control button call back  here ;\n";
+        for(const std::string& fName : m_listCContorlCallBack)
+        {
+            std::string callBackImpli = m_callBackControl;
+            string_replace(callBackImpli, "%class_name%", m_className);
+            string_replace(callBackImpli, "%control_call%", fName);
+            string_replace(callBackImpli, "%ctrl_class_member%", m_ctrlClassPointMember);
+            m_cpp << callBackImpli ;
+        }
+        m_cpp << "// end control call back\n\n";
     }
-    m_cpp << "// end control call back\n\n";
+   
 }
-void CodeGen::GenerateCallBackMenu()
+void CodeGen::GenerateCallBackMenu(bool p_bIsCtrlClass)
 {
-    m_cpp << "// menu call back   here ;\n";
-    for(const std::string& fName : m_listMenuCallBack)
-    {
-        std::string callBackImpli = m_callBackMenu;
-        string_replace(callBackImpli, "%class_name%", m_className);
-        string_replace(callBackImpli, "%menu_call%", fName);
-        string_replace(callBackImpli, "%ctrl_class_member%", m_ctrlClassPointMember);
-        m_cpp << callBackImpli;
+    if(p_bIsCtrlClass){
+        m_ctrlCpp << "// menu call back   here ;\n";
+        for(const std::string& fName : m_listMenuCallBack)
+        {
+            std::string callBackImpli = g_ctrlCallBackMenu;
+            string_replace(callBackImpli, "%ctrl_class_name%", m_pureClassName);
+            string_replace(callBackImpli, "%menu_call%", fName);
+            m_ctrlCpp << callBackImpli;
+        }
+        m_ctrlCpp << "// end menu call back\n\n";
+    }else{
+        m_cpp << "// menu call back   here ;\n";
+        for(const std::string& fName : m_listMenuCallBack)
+        {
+            std::string callBackImpli = m_callBackMenu;
+            string_replace(callBackImpli, "%class_name%", m_className);
+            string_replace(callBackImpli, "%menu_call%", fName);
+            string_replace(callBackImpli, "%ctrl_class_member%", m_ctrlClassPointMember);
+            m_cpp << callBackImpli;
+        }
+        m_cpp << "// end menu call back\n\n";
     }
-    m_cpp << "// end menu call back\n\n";
 }
 
 

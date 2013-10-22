@@ -8,6 +8,17 @@
 
 #import "code1.h"
 
+enum{
+    Code_DonotAssign,
+    Code_Root_Var,
+    Code_Owner,
+};
+
+enum{
+    Target_None,
+    Target_Root_Var,
+    Target_Owner,
+};
 
 @implementation code1
 @synthesize baseClassName = m_baseClassName;
@@ -38,19 +49,25 @@
         
     }
     
+    int l_iCodeType = (int)[[node objectForKey:@"memberVarAssignmentType"] integerValue];
+    
     if (assignMemberName != "") {
         if (cutomClassName == "") {
             m_listAssignMember.push_back(TypeName(baseClassNmae,assignMemberName));
-
+            if(l_iCodeType != Code_Root_Var){
+                NSLog(@"\nWaning... AssignmentType != Code_Root_Var  \t\"%s >> %s\" ", m_className.c_str(), assignMemberName.c_str());
+            }
         }
         else
         {
             m_listAssignMember.push_back(TypeName(cutomClassName,assignMemberName));
-
+            if(l_iCodeType != Code_Root_Var){
+                NSLog(@"Waning... AssignmentType != Code_Root_Var \t\"%s -> %s\" -->", m_className.c_str(), assignMemberName.c_str());
+            }
         }
     }
 
-    // Properties
+    //Properties
     NSArray* props = [node objectForKey:@"properties"];
     for (int i = 0; i < [props count]; i++)
     {
@@ -66,24 +83,42 @@
         if ([type isEqualToString:@"Block"])
         {
             NSString* menuCallback = [value objectAtIndex:0];
+            int l_iTargetType = [[value objectAtIndex:1] intValue];
             if (menuCallback ) {
                 //>=-Rct-=< only the new one is pushed back here
                 std::string l_strContent = [menuCallback UTF8String];
                 std::vector<std::string>::iterator l_iter = std::find(m_listMenuCallBack.begin(), m_listMenuCallBack.end(), l_strContent);
                 if(l_iter == m_listMenuCallBack.end()){
                     m_listMenuCallBack.push_back([menuCallback UTF8String]);
+                    if(l_iTargetType != Target_Root_Var){
+                        if([menuCallback isEqualToString:@""]){
+                            NSLog(@"Warning... blockMenu without selector name \t\"%s -> %@\"", m_className.c_str(), menuCallback);
+                        }else{
+                            NSLog(@"Waning... blockMenu AssignmentType != Target_Root_Var \t\"%s -> %@\"", m_className.c_str(), menuCallback);
+                        }
+                        
+                    }
                 }
             }
         }
         else if ([type isEqualToString:@"BlockCCControl"])
         {
             NSString* cccallback = [value objectAtIndex:0];
+            int l_iTargetType = [[value objectAtIndex:1] intValue];
+            
             if (cccallback) {
                 //>=-Rct-=< only the new one is pushed back here
                 std::string l_strContent = [cccallback UTF8String];
                 std::vector<std::string>::iterator l_iter = std::find(m_listCContorlCallBack.begin(), m_listCContorlCallBack.end(), l_strContent);
                 if(l_iter == m_listCContorlCallBack.end()){
                     m_listCContorlCallBack.push_back([cccallback UTF8String]);
+                    if(l_iTargetType != Target_Root_Var){
+                        if([cccallback isEqualToString:@""]){
+                            NSLog(@"Warning... blockMenuControl without selector name \t\"%s -> %@\"", m_className.c_str(), cccallback);
+                        }else{
+                            NSLog(@"Waning... blockMenuControl AssignmentType != Target_Root_Var \t\"%s -> %@\"", m_className.c_str(), cccallback);
+                        }
+                    }
                 }
             }
         }

@@ -30,8 +30,8 @@ public:
     {
         GenerateClassDec();
         GenerateInterfaceDec();
-        GenerateCallBackControlDec();
-        GenerateCallBackMenuDec();
+        GenerateCallBackControlDec(false);
+        GenerateCallBackMenuDec(false);
         GenerateAssignMemberDec();
         GenerateVisitMemberDefine();
         GenerateCustomMemberDec();
@@ -39,19 +39,23 @@ public:
         GeneateClassEnd();
         
         GenerateCtrlClassHeadFile();
+        GenerateCallBackControlDec(true);
+        GenerateCallBackMenuDec(true);
+        GenerateCtrlClassEndFile();
     }
     void GenerateCppFile()
     {
         GenerateCppHeader();
-        GenerateCallBackControl();
-        GenerateCallBackMenu();
+        GenerateCallBackControl(false);
+        GenerateCallBackMenu(false);
         GlueMenuCallBack();
         GlueControlCallBack();
         GlueAssignMember();
         GlueCustomMember();
         
         GenerateCtrlClassCppFile();
-
+        GenerateCallBackControl(true);
+        GenerateCallBackMenu(true);
     }
     CodeGen(std::ostream& h,std::ostream& c);
     CodeGen(std::ostream& p_head, std::ostream& p_cpp, std::ostream& p_ctrlHead, std::ostream& p_ctrlCpp);
@@ -61,8 +65,8 @@ private:
     //header file
     void GenerateClassDec();
     void GenerateInterfaceDec();
-    void GenerateCallBackControlDec();
-    void GenerateCallBackMenuDec();
+    void GenerateCallBackControlDec(bool p_bIsCtrlClass);
+    void GenerateCallBackMenuDec(bool p_bIsCtrlClass);
     void GenerateAssignMemberDec();
     void GenerateVisitMemberDefine();
     void GenerateCustomMemberDec();
@@ -70,12 +74,13 @@ private:
     void GeneateClassEnd();
     
     void GenerateCtrlClassHeadFile();
+    void GenerateCtrlClassEndFile();
     
 #pragma mark cpp File
     //cpp file
     void GenerateCppHeader();
-    void GenerateCallBackControl();
-    void GenerateCallBackMenu();
+    void GenerateCallBackControl(bool p_bIsCtrlClass);
+    void GenerateCallBackMenu(bool p_bIsCtrlClass);
 
     void GlueMenuCallBack();
     void GlueControlCallBack();
