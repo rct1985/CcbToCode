@@ -8,6 +8,7 @@
 //
 
 #include "FollowerProperty_CCB.h"
+#include "FollowerProperty.h"
 using namespace cocos2d;
 using namespace cocos2d::extension;
 

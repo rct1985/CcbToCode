@@ -54,6 +54,7 @@ public:
 	,m_listIcon5(0)
 	,m_listIcon6(0)
 	,m_listIcon7(0)
+	,m_recylebin(0)
 {}
 CREATE_FUNC(Formation_CCB);
 
@@ -81,6 +82,7 @@ protected:
 	void selector_quickGroup(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
 	void selector_showGroupList(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
 	void selector_showGroupDetail(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+	void (CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
 
  // menu call back fuction 
 protected:
@@ -117,6 +119,7 @@ protected:
 	cocos2d::extension::CCControlButton*		m_listIcon5;
 	cocos2d::extension::CCControlButton*		m_listIcon6;
 	cocos2d::extension::CCControlButton*		m_listIcon7;
+	cocos2d::extension::CCControlButton*		m_recylebin;
 
  //member visit function
 public:
@@ -149,6 +152,7 @@ public:
 	inline cocos2d::extension::CCControlButton*&		listIcon5(){ return m_listIcon5; }
 	inline cocos2d::extension::CCControlButton*&		listIcon6(){ return m_listIcon6; }
 	inline cocos2d::extension::CCControlButton*&		listIcon7(){ return m_listIcon7; }
+	inline cocos2d::extension::CCControlButton*&		recylebin(){ return m_recylebin; }
 
  //custom member list 
 protected:

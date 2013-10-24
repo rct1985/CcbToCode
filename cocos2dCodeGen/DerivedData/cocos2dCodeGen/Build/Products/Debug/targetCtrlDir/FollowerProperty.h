@@ -22,10 +22,22 @@ public:
 
     CREATE_FUNC(FollowerProperty);
     bool init();
-    
+
     void initCCB();
     void giveValueToCCB();
 
+
+
+ //control call back function;
+public:
+
+ // menu call back fuction 
+public:
+	void selector_back(cocos2d::CCObject * pSender);
+	void selector_cardToFight(cocos2d::CCObject * pSender);
+	void selector_equip(cocos2d::CCObject * pSender);
+	void selector_skill(cocos2d::CCObject * pSender);
+//
 private:
     cocos2d::extension::CCBReader* m_ccbReader;
     FollowerProperty_CCB* m_ccbMember;

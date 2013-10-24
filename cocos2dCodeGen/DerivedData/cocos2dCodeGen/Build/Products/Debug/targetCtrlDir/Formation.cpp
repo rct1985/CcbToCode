@@ -15,6 +15,7 @@ using namespace cocos2d::extension;
 Formation::Formation(){
 }
 Formation::~Formation(){
+    CC_SAFE_DELETE(m_ccbReader);
 }
 bool Formation::init(){
     bool l_bResult = true;
@@ -35,7 +36,9 @@ void Formation::initCCB(){
     //read ccbi file
     m_ccbReader = new CCBReader( lib );
     //m_ccbReader->setResolutionScale(2.0f);
-    m_ccbMember = (BattleBeginInfo_CCB*)m_ccbReader->readNodeGraphFromFile("BattleBeginInfo.ccbi", this);
+    m_ccbMember = (Formation_CCB*)m_ccbReader->readNodeGraphFromFile("Formation.ccbi", this);
+
+    m_ccbMember->setFormation(this);
 
     //CCB
     m_ccbMember->setPosition(ccu(0, 0));
@@ -47,4 +50,34 @@ void Formation::giveValueToCCB(){
     //do what your want here
 }
 
+
+//control button call back  here ;
+void Formation::selector_back(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+	//do what you want here
+}
+void Formation::selector_quickGroup(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+	//do what you want here
+}
+void Formation::selector_showGroupList(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+	//do what you want here
+}
+void Formation::selector_showGroupDetail(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+	//do what you want here
+}
+void Formation::(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+	//do what you want here
+}
+// end control call back
+
+// menu call back   here ;
+void Formation::selector_showCard(cocos2d::CCObject * pSender)
+{
+	//do what you want here
+}
+// end menu call back
 

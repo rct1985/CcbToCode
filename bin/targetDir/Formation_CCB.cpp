@@ -8,6 +8,7 @@
 //
 
 #include "Formation_CCB.h"
+#include "Formation.h"
 using namespace cocos2d;
 using namespace cocos2d::extension;
 

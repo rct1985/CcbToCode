@@ -22,10 +22,23 @@ public:
 
     CREATE_FUNC(Formation);
     bool init();
-    
+
     void initCCB();
     void giveValueToCCB();
 
+
+
+ //control call back function;
+public:
+	void selector_back(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+	void selector_quickGroup(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+	void selector_showGroupList(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+	void selector_showGroupDetail(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+
+ // menu call back fuction 
+public:
+	void selector_showCard(cocos2d::CCObject * pSender);
+//
 private:
     cocos2d::extension::CCBReader* m_ccbReader;
     Formation_CCB* m_ccbMember;

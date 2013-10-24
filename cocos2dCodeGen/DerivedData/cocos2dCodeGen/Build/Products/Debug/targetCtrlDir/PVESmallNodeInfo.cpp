@@ -15,6 +15,7 @@ using namespace cocos2d::extension;
 PVESmallNodeInfo::PVESmallNodeInfo(){
 }
 PVESmallNodeInfo::~PVESmallNodeInfo(){
+    CC_SAFE_DELETE(m_ccbReader);
 }
 bool PVESmallNodeInfo::init(){
     bool l_bResult = true;
@@ -35,7 +36,9 @@ void PVESmallNodeInfo::initCCB(){
     //read ccbi file
     m_ccbReader = new CCBReader( lib );
     //m_ccbReader->setResolutionScale(2.0f);
-    m_ccbMember = (BattleBeginInfo_CCB*)m_ccbReader->readNodeGraphFromFile("BattleBeginInfo.ccbi", this);
+    m_ccbMember = (PVESmallNodeInfo_CCB*)m_ccbReader->readNodeGraphFromFile("PVESmallNodeInfo.ccbi", this);
+
+    m_ccbMember->setPVESmallNodeInfo(this);
 
     //CCB
     m_ccbMember->setPosition(ccu(0, 0));
@@ -47,4 +50,10 @@ void PVESmallNodeInfo::giveValueToCCB(){
     //do what your want here
 }
 
+
+//control button call back  here ;
+// end control call back
+
+// menu call back   here ;
+// end menu call back
 

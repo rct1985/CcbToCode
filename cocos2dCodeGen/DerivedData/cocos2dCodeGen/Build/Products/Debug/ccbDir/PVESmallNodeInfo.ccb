@@ -274,6 +274,8 @@
 </string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -672,7 +674,7 @@
 				<key>memberVarAssignmentName</key>
 				<string>m_labelEnergyLeft</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -925,7 +927,7 @@
 				<key>memberVarAssignmentName</key>
 				<string>m_labelSmallNodeDes</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -1680,7 +1682,7 @@
 				<key>memberVarAssignmentName</key>
 				<string>m_labelPrize_exp</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -2149,7 +2151,7 @@
 				<key>memberVarAssignmentName</key>
 				<string>m_spritePrizeItem_another</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>

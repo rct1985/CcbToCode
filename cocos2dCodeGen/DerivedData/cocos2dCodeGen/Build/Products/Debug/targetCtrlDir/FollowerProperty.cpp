@@ -15,6 +15,7 @@ using namespace cocos2d::extension;
 FollowerProperty::FollowerProperty(){
 }
 FollowerProperty::~FollowerProperty(){
+    CC_SAFE_DELETE(m_ccbReader);
 }
 bool FollowerProperty::init(){
     bool l_bResult = true;
@@ -35,7 +36,9 @@ void FollowerProperty::initCCB(){
     //read ccbi file
     m_ccbReader = new CCBReader( lib );
     //m_ccbReader->setResolutionScale(2.0f);
-    m_ccbMember = (BattleBeginInfo_CCB*)m_ccbReader->readNodeGraphFromFile("BattleBeginInfo.ccbi", this);
+    m_ccbMember = (FollowerProperty_CCB*)m_ccbReader->readNodeGraphFromFile("FollowerProperty.ccbi", this);
+
+    m_ccbMember->setFollowerProperty(this);
 
     //CCB
     m_ccbMember->setPosition(ccu(0, 0));
@@ -47,4 +50,26 @@ void FollowerProperty::giveValueToCCB(){
     //do what your want here
 }
 
+
+//control button call back  here ;
+// end control call back
+
+// menu call back   here ;
+void FollowerProperty::selector_back(cocos2d::CCObject * pSender)
+{
+	//do what you want here
+}
+void FollowerProperty::selector_cardToFight(cocos2d::CCObject * pSender)
+{
+	//do what you want here
+}
+void FollowerProperty::selector_equip(cocos2d::CCObject * pSender)
+{
+	//do what you want here
+}
+void FollowerProperty::selector_skill(cocos2d::CCObject * pSender)
+{
+	//do what you want here
+}
+// end menu call back
 

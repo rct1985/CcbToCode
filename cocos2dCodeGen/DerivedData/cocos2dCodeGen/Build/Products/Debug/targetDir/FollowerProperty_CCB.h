@@ -29,6 +29,7 @@ public:
 	,m_faction(0)
 	,m_level(0)
 	,m_power(0)
+	,m_btnCardToFight(0)
 	,m_equiptMenu(0)
 	,m_weaponButton(0)
 	,m_armorButton(0)
@@ -42,6 +43,7 @@ public:
 	,m_defence(0)
 	,m_magicDefence(0)
 	,m_cardLayer(0)
+	,m_skills(0)
 {}
 CREATE_FUNC(FollowerProperty_CCB);
 
@@ -69,11 +71,9 @@ protected:
  // menu call back fuction 
 protected:
 	void selector_back(cocos2d::CCObject * pSender);
-	void selector_weapon(cocos2d::CCObject * pSender);
-	void selector_armor(cocos2d::CCObject * pSender);
-	void selector_trump(cocos2d::CCObject * pSender);
-	void selector_necklace(cocos2d::CCObject * pSender);
-	void selector_ring(cocos2d::CCObject * pSender);
+	void selector_cardToFight(cocos2d::CCObject * pSender);
+	void selector_equip(cocos2d::CCObject * pSender);
+	void selector_skill(cocos2d::CCObject * pSender);
 
  //member will assigned form ccbi file
 protected:
@@ -81,6 +81,7 @@ protected:
 	cocos2d::CCLabelTTF*		m_faction;
 	cocos2d::CCLabelTTF*		m_level;
 	cocos2d::CCLabelTTF*		m_power;
+	cocos2d::CCMenuItemImage*		m_btnCardToFight;
 	cocos2d::CCMenu*		m_equiptMenu;
 	cocos2d::CCMenuItemImage*		m_weaponButton;
 	cocos2d::CCMenuItemImage*		m_armorButton;
@@ -94,6 +95,7 @@ protected:
 	cocos2d::CCLabelTTF*		m_defence;
 	cocos2d::CCLabelTTF*		m_magicDefence;
 	cocos2d::CCLayer*		m_cardLayer;
+	cocos2d::CCMenu*		m_skills;
 
  //member visit function
 public:
@@ -101,6 +103,7 @@ public:
 	inline cocos2d::CCLabelTTF*&		faction(){ return m_faction; }
 	inline cocos2d::CCLabelTTF*&		level(){ return m_level; }
 	inline cocos2d::CCLabelTTF*&		power(){ return m_power; }
+	inline cocos2d::CCMenuItemImage*&		btnCardToFight(){ return m_btnCardToFight; }
 	inline cocos2d::CCMenu*&		equiptMenu(){ return m_equiptMenu; }
 	inline cocos2d::CCMenuItemImage*&		weaponButton(){ return m_weaponButton; }
 	inline cocos2d::CCMenuItemImage*&		armorButton(){ return m_armorButton; }
@@ -114,6 +117,7 @@ public:
 	inline cocos2d::CCLabelTTF*&		defence(){ return m_defence; }
 	inline cocos2d::CCLabelTTF*&		magicDefence(){ return m_magicDefence; }
 	inline cocos2d::CCLayer*&		cardLayer(){ return m_cardLayer; }
+	inline cocos2d::CCMenu*&		skills(){ return m_skills; }
 
  //custom member list 
 protected:

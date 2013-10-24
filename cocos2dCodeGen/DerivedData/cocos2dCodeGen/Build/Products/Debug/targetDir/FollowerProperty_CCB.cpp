@@ -8,6 +8,7 @@
 //
 
 #include "FollowerProperty_CCB.h"
+#include "FollowerProperty.h"
 using namespace cocos2d;
 using namespace cocos2d::extension;
 
@@ -23,30 +24,20 @@ void FollowerProperty_CCB::selector_back(cocos2d::CCObject * pSender)
 	//feel free to modify code below
 	m_followerProperty->selector_back(pSender);
 }
-void FollowerProperty_CCB::selector_weapon(cocos2d::CCObject * pSender)
+void FollowerProperty_CCB::selector_cardToFight(cocos2d::CCObject * pSender)
 {
 	//feel free to modify code below
-	m_followerProperty->selector_weapon(pSender);
+	m_followerProperty->selector_cardToFight(pSender);
 }
-void FollowerProperty_CCB::selector_armor(cocos2d::CCObject * pSender)
+void FollowerProperty_CCB::selector_equip(cocos2d::CCObject * pSender)
 {
 	//feel free to modify code below
-	m_followerProperty->selector_armor(pSender);
+	m_followerProperty->selector_equip(pSender);
 }
-void FollowerProperty_CCB::selector_trump(cocos2d::CCObject * pSender)
+void FollowerProperty_CCB::selector_skill(cocos2d::CCObject * pSender)
 {
 	//feel free to modify code below
-	m_followerProperty->selector_trump(pSender);
-}
-void FollowerProperty_CCB::selector_necklace(cocos2d::CCObject * pSender)
-{
-	//feel free to modify code below
-	m_followerProperty->selector_necklace(pSender);
-}
-void FollowerProperty_CCB::selector_ring(cocos2d::CCObject * pSender)
-{
-	//feel free to modify code below
-	m_followerProperty->selector_ring(pSender);
+	m_followerProperty->selector_skill(pSender);
 }
 // end menu call back
 
@@ -54,11 +45,9 @@ void FollowerProperty_CCB::selector_ring(cocos2d::CCObject * pSender)
 SEL_MenuHandler FollowerProperty_CCB::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 {
 	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_back",FollowerProperty_CCB::selector_back);
-	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_weapon",FollowerProperty_CCB::selector_weapon);
-	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_armor",FollowerProperty_CCB::selector_armor);
-	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_trump",FollowerProperty_CCB::selector_trump);
-	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_necklace",FollowerProperty_CCB::selector_necklace);
-	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_ring",FollowerProperty_CCB::selector_ring);
+	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_cardToFight",FollowerProperty_CCB::selector_cardToFight);
+	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_equip",FollowerProperty_CCB::selector_equip);
+	CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"selector_skill",FollowerProperty_CCB::selector_skill);
 	return false;
 }
 
@@ -74,6 +63,7 @@ bool FollowerProperty_CCB::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget,
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_faction",CCLabelTTF*,this->m_faction);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_level",CCLabelTTF*,this->m_level);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_power",CCLabelTTF*,this->m_power);
+	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_btnCardToFight",CCMenuItemImage*,this->m_btnCardToFight);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_equiptMenu",CCMenu*,this->m_equiptMenu);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_weaponButton",CCMenuItemImage*,this->m_weaponButton);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_armorButton",CCMenuItemImage*,this->m_armorButton);
@@ -87,6 +77,7 @@ bool FollowerProperty_CCB::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget,
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_defence",CCLabelTTF*,this->m_defence);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_magicDefence",CCLabelTTF*,this->m_magicDefence);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_cardLayer",CCLayer*,this->m_cardLayer);
+	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_skills",CCMenu*,this->m_skills);
 	return false;
 }
 // glue custom member here ;

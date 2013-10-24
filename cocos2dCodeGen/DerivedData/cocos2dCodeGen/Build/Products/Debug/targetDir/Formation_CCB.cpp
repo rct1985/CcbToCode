@@ -8,6 +8,7 @@
 //
 
 #include "Formation_CCB.h"
+#include "Formation.h"
 using namespace cocos2d;
 using namespace cocos2d::extension;
 
@@ -35,6 +36,11 @@ void Formation_CCB::selector_showGroupDetail(CCObject * pSender, cocos2d::extens
 	//feel free to modify code below
 	m_formation->selector_showGroupDetail(pSender, pCCControlEvent);
 }
+void Formation_CCB::(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+	//feel free to modify code below
+	m_formation->(pSender, pCCControlEvent);
+}
 // end control call back
 
 // menu call back   here ;
@@ -59,6 +65,7 @@ SEL_CCControlHandler Formation_CCB::onResolveCCBCCControlSelector(cocos2d::CCObj
 	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this,"selector_quickGroup",Formation_CCB::selector_quickGroup);
 	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this,"selector_showGroupList",Formation_CCB::selector_showGroupList);
 	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this,"selector_showGroupDetail",Formation_CCB::selector_showGroupDetail);
+	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this,"",Formation_CCB::);
 	return false;
 }
 
@@ -93,6 +100,7 @@ bool Formation_CCB::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, const 
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_listIcon5",CCControlButton*,this->m_listIcon5);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_listIcon6",CCControlButton*,this->m_listIcon6);
 	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_listIcon7",CCControlButton*,this->m_listIcon7);
+	CCB_MEMBERVARIABLEASSIGNER_GLUE(this,"m_recylebin",CCControlButton*,this->m_recylebin);
 	return false;
 }
 // glue custom member here ;

@@ -22,10 +22,18 @@ public:
 
     CREATE_FUNC(BattleBeginInfo);
     bool init();
-    
+
     void initCCB();
     void giveValueToCCB();
 
+
+
+ //control call back function;
+public:
+
+ // menu call back fuction 
+public:
+//
 private:
     cocos2d::extension::CCBReader* m_ccbReader;
     BattleBeginInfo_CCB* m_ccbMember;

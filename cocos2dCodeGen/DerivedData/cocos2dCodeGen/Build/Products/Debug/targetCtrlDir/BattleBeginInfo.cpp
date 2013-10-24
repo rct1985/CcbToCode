@@ -15,6 +15,7 @@ using namespace cocos2d::extension;
 BattleBeginInfo::BattleBeginInfo(){
 }
 BattleBeginInfo::~BattleBeginInfo(){
+    CC_SAFE_DELETE(m_ccbReader);
 }
 bool BattleBeginInfo::init(){
     bool l_bResult = true;
@@ -37,6 +38,8 @@ void BattleBeginInfo::initCCB(){
     //m_ccbReader->setResolutionScale(2.0f);
     m_ccbMember = (BattleBeginInfo_CCB*)m_ccbReader->readNodeGraphFromFile("BattleBeginInfo.ccbi", this);
 
+    m_ccbMember->setBattleBeginInfo(this);
+
     //CCB
     m_ccbMember->setPosition(ccu(0, 0));
     //fill border
@@ -47,4 +50,10 @@ void BattleBeginInfo::giveValueToCCB(){
     //do what your want here
 }
 
+
+//control button call back  here ;
+// end control call back
+
+// menu call back   here ;
+// end menu call back
 

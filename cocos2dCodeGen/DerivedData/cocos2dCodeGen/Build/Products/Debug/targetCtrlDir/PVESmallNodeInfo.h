@@ -22,10 +22,18 @@ public:
 
     CREATE_FUNC(PVESmallNodeInfo);
     bool init();
-    
+
     void initCCB();
     void giveValueToCCB();
 
+
+
+ //control call back function;
+public:
+
+ // menu call back fuction 
+public:
+//
 private:
     cocos2d::extension::CCBReader* m_ccbReader;
     PVESmallNodeInfo_CCB* m_ccbMember;

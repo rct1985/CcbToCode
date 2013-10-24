@@ -18,6 +18,21 @@
 }
 </string>
 
+<key>CtrlCallBackMenu.txt</key>
+<string>void %ctrl_class_name%::%menu_call%(cocos2d::CCObject * pSender)
+{
+	//do what you want here
+}
+</string>
+
+<key>CtrlCallBackControl.txt</key>
+<string>void %ctrl_class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+{
+	//do what you want here
+}
+</string>
+
+
 <key>GlueControlCallBack.txt</key>
 <string>SEL_CCControlHandler %class_name%::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 {
@@ -105,6 +120,7 @@ public:
 //
 
 #include &quot;%class_name%.h&quot;
+#include &quot;%ctrl_class_name%.h&quot;
 using namespace cocos2d;
 using namespace cocos2d::extension;
 
@@ -113,7 +129,7 @@ void %class_name%::onNodeLoaded(cocos2d::CCNode *pNode, cocos2d::extension::CCNo
 }
 </string>
 
-<key>CtrlClassDec.txt</key>
+<key>CtrlClassDecHead.txt</key>
 <string>//
 //  %ctrl_class_name%.h
 //  
@@ -138,10 +154,14 @@ public:
 
     CREATE_FUNC(%ctrl_class_name%);
     bool init();
-    
+
     void initCCB();
     void giveValueToCCB();
 
+</string>
+
+<key>CtrlClassDecEnd.txt</key>
+<string>//
 private:
     cocos2d::extension::CCBReader* m_ccbReader;
     %class_name%* m_ccbMember;
@@ -167,6 +187,7 @@ using namespace cocos2d::extension;
 %ctrl_class_name%::%ctrl_class_name%(){
 }
 %ctrl_class_name%::~%ctrl_class_name%(){
+    CC_SAFE_DELETE(m_ccbReader);
 }
 bool %ctrl_class_name%::init(){
     bool l_bResult = true;
@@ -187,7 +208,9 @@ void %ctrl_class_name%::initCCB(){
     //read ccbi file
     m_ccbReader = new CCBReader( lib );
     //m_ccbReader->setResolutionScale(2.0f);
-    m_ccbMember = (BattleBeginInfo_CCB*)m_ccbReader->readNodeGraphFromFile("BattleBeginInfo.ccbi", this);
+    m_ccbMember = (%class_name%*)m_ccbReader->readNodeGraphFromFile("%ctrl_class_name%.ccbi", this);
+
+    m_ccbMember->set%ctrl_class_name%(this);
 
     //CCB
     m_ccbMember->setPosition(ccu(0, 0));
