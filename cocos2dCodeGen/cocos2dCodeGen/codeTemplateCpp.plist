@@ -2,86 +2,73 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<key>CallBackMenu.txt</key>
-<string>void %class_name%::%menu_call%(cocos2d::CCObject * pSender)
+	<key>CallBackMenu.txt</key>
+	<string>void %class_name%::%menu_call%(cocos2d::CCObject * pSender)
 {
 	//feel free to modify code below
 	%ctrl_class_member%-&gt;%menu_call%(pSender);
 }
 </string>
-
-<key>CallBackControl.txt</key>
-<string>void %class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+	<key>CallBackControl.txt</key>
+	<string>void %class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
 {
 	//feel free to modify code below
 	%ctrl_class_member%-&gt;%control_call%(pSender, pCCControlEvent);
 }
 </string>
-
-<key>CtrlCallBackMenu.txt</key>
-<string>void %ctrl_class_name%::%menu_call%(cocos2d::CCObject * pSender)
+	<key>CtrlCallBackMenu.txt</key>
+	<string>void %ctrl_class_name%::%menu_call%(cocos2d::CCObject * pSender)
 {
 	//do what you want here
 }
 </string>
-
-<key>CtrlCallBackControl.txt</key>
-<string>void %ctrl_class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
+	<key>CtrlCallBackControl.txt</key>
+	<string>void %ctrl_class_name%::%control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
 {
 	//do what you want here
 }
 </string>
-
-
-<key>GlueControlCallBack.txt</key>
-<string>SEL_CCControlHandler %class_name%::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
+	<key>GlueControlCallBack.txt</key>
+	<string>SEL_CCControlHandler %class_name%::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 {
 </string>
-
-<key>GlueAssignMember.txt</key>
-<string>bool %class_name%::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::CCNode *pNode)
+	<key>GlueAssignMember.txt</key>
+	<string>bool %class_name%::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::CCNode *pNode)
 {</string>
-
-<key>GlueCustomMember.txt</key>
-<string>bool %class_name%::onAssignCCBCustomProperty(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::extension::CCBValue *pCCBValue)
+	<key>GlueCustomMember.txt</key>
+	<string>bool %class_name%::onAssignCCBCustomProperty(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::extension::CCBValue *pCCBValue)
 {
     if (pTarget == this)
     {
 </string>
-
-<key>GlueMenuCallBack.txt</key>
-<string>SEL_MenuHandler %class_name%::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
+	<key>GlueMenuCallBack.txt</key>
+	<string>SEL_MenuHandler %class_name%::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 {
 </string>
-
-<key>CallBackMenuDec.txt</key>
-<string>	void %menu_call%(cocos2d::CCObject * pSender);
+	<key>CallBackMenuDec.txt</key>
+	<string>	void %menu_call%(cocos2d::CCObject * pSender);
 </string>
-
-<key>CallBackCControlDec.txt</key>
-<string>	void %control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
+	<key>CallBackCControlDec.txt</key>
+	<string>	void %control_call%(CCObject * pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
 </string>
-
-<key>InterfaceDec.txt</key>
-<string>protected:
+	<key>InterfaceDec.txt</key>
+	<string>protected:
     virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName);
     virtual cocos2d::extension::SEL_CCControlHandler onResolveCCBCCControlSelector(cocos2d::CCObject * pTarget, const char * pSelectorName);
     virtual bool onAssignCCBMemberVariable(cocos2d::CCObject * pTarget, const char * pMemberVariableName, cocos2d::CCNode * pNode);
     virtual void onNodeLoaded(cocos2d::CCNode * pNode, cocos2d::extension::CCNodeLoader * pNodeLoader);
     virtual bool onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, cocos2d::extension:: CCBValue* pCCBValue);
 </string>
-
-<key>Loader.txt</key>
-<string>class %loader_name% : public cocos2d::extension::%super_loader_name%
+	<key>Loader.txt</key>
+	<string>class %loader_name% : public cocos2d::extension::%super_loader_name%
 {
 public:
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(%loader_name%, loader);
 protected:
     CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(%class_name%);
 };</string>
-
-<key>ClassDec.txt</key>
-<string>//
+	<key>ClassDec.txt</key>
+	<string>//
 //  %class_name%.h
 //  
 //
@@ -108,9 +95,8 @@ public:
     %class_name%()
     :%base_class%()
 </string>
-
-<key>CppHeader.txt</key>
-<string>//
+	<key>CppHeader.txt</key>
+	<string>//
 //  %class_name%.cpp
 //  
 //
@@ -128,9 +114,8 @@ void %class_name%::onNodeLoaded(cocos2d::CCNode *pNode, cocos2d::extension::CCNo
 {
 }
 </string>
-
-<key>CtrlClassDecHead.txt</key>
-<string>//
+	<key>CtrlClassDecHead.txt</key>
+	<string>//
 //  %ctrl_class_name%.h
 //  
 //
@@ -159,18 +144,16 @@ public:
     void giveValueToCCB();
 
 </string>
-
-<key>CtrlClassDecEnd.txt</key>
-<string>//
+	<key>CtrlClassDecEnd.txt</key>
+	<string>//
 private:
     cocos2d::extension::CCBReader* m_ccbReader;
     %class_name%* m_ccbMember;
 };
 #endif
 </string>
-
-<key>CtrlCppContent.txt</key>
-<string>//
+	<key>CtrlCppContent.txt</key>
+	<string>//
 //  %ctrl_class_name%.cpp
 //  
 //
@@ -187,7 +170,7 @@ using namespace cocos2d::extension;
 %ctrl_class_name%::%ctrl_class_name%(){
 }
 %ctrl_class_name%::~%ctrl_class_name%(){
-    CC_SAFE_DELETE(m_ccbReader);
+    //CC_SAFE_DELETE(m_ccbReader);
 }
 bool %ctrl_class_name%::init(){
     bool l_bResult = true;
@@ -195,27 +178,30 @@ bool %ctrl_class_name%::init(){
         if(!CCLayer::init()){
             l_bResult = false;
         }
-        this->initCCB();
-        this->giveValueToCCB();
+        this-&gt;initCCB();
+        this-&gt;giveValueToCCB();
     }while(0);
     return l_bResult;
 }
 
 void %ctrl_class_name%::initCCB(){
     CCNodeLoaderLibrary *lib = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-    lib->registerCCNodeLoader(&quot;%class_name%&quot;, %class_name%::%ctrl_class_name%_CCBLoader::loader());
+    lib-&gt;registerCCNodeLoader(&quot;%class_name%&quot;, %class_name%::%ctrl_class_name%_CCBLoader::loader());
 
     //read ccbi file
     m_ccbReader = new CCBReader( lib );
-    //m_ccbReader->setResolutionScale(2.0f);
-    m_ccbMember = (%class_name%*)m_ccbReader->readNodeGraphFromFile("%ctrl_class_name%.ccbi", this);
+    //m_ccbReader-&gt;setResolutionScale(2.0f);
+    m_ccbMember = (%class_name%*)m_ccbReader-&gt;readNodeGraphFromFile(&quot;%ctrl_class_name%.ccbi&quot;, this);
 
-    m_ccbMember->set%ctrl_class_name%(this);
+    m_ccbMember-&gt;set%ctrl_class_name%(this);
 
     //CCB
-    m_ccbMember->setPosition(ccu(0, 0));
+    m_ccbMember-&gt;setPosition(ccp(0, 0));
+    this-&gt;setContentSize(m_ccbMember-&gt;getContentSize());
     //fill border
-    this->addChild(m_ccbMember);
+    this-&gt;addChild(m_ccbMember);
+
+    CC_SAFE_DELETE(m_ccbReader);
 }
 
 void %ctrl_class_name%::giveValueToCCB(){
@@ -223,9 +209,5 @@ void %ctrl_class_name%::giveValueToCCB(){
 }
 
 </string>
-
-
-
-
 </dict>
 </plist>

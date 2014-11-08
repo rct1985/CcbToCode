@@ -13,6 +13,9 @@
 #include "utility.h"
 #include <vector>
 
+//定义用于支持cocos2dx_3
+#define Cocos2dX_3
+
 class CodeGen
 {
 public:
@@ -28,6 +31,10 @@ public:
     
     void GenerateHeaderFile()
     {
+#ifdef Cocos2dX_3
+        preProcess_cocos2dx_3();
+#endif
+        
         GenerateClassDec();
         GenerateInterfaceDec();
         GenerateCallBackControlDec(false);
@@ -61,6 +68,9 @@ public:
     CodeGen(std::ostream& p_head, std::ostream& p_cpp, std::ostream& p_ctrlHead, std::ostream& p_ctrlCpp);
     void init();
 private:
+#pragma mark cocos2dx_3
+    void preProcess_cocos2dx_3();
+    
 #pragma mark HeadFile
     //header file
     void GenerateClassDec();

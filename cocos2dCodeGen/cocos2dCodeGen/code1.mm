@@ -168,6 +168,12 @@ enum{
     if (className == nil) {
         return;
     }
+    
+    if([className length] <= 4){
+        NSLog(@"%@ without suffix _CCB", path);
+        return ;
+    }
+    
     m_className = [className UTF8String];
     //>=-Rct-=<
     m_pureClassName = [[className substringToIndex:[className length] - 4] UTF8String];

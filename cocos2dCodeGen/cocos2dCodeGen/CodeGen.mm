@@ -36,7 +36,8 @@ std::string g_ctrlClassCppFileContent;
 std::string g_ctrlCallBackControl;
 std::string g_ctrlCallBackMenu;
 
-const static std::set<std::string> cocos2dClass =
+
+static std::set<std::string> cocos2dClass =
 {
     "CCNode",
     "CCSprite",
@@ -55,15 +56,40 @@ const static std::set<std::string> cocos2dClass =
     "CCControl",
     "CCControlButton",
     "CCScrollView",
+#ifdef Cocos2dX_3
+    "Node",
+    "Sprite",
+    "Layer",
+    "LayerColor",
+    "LayerGradient",
+    "Menu",
+    "LabelBMFont",
+    "LabelTTF",
+    "ParticleSystem",
+    "ParticleSystemQuad",
+    "ParticleSystemPoint",
+    "MenuItemImage",
+    "CCBFile",
+    "Scale9Sprite",
+    "Control",
+    "ControlButton",
+    "ScrollView",
+#endif
 };
-const static std::set<std::string> extensionClass=
+static std::set<std::string> extensionClass=
 {
     "CCBFile",
     "CCScale9Sprite",
     "CCControl",
     "CCControlButton",
     "CCScrollView",
-    
+#ifdef Cocos2dX_3
+    "BFile",
+    "Scale9Sprite",
+    "Control",
+    "ControlButton",
+    "ScrollView",
+#endif
 };
 
 void string_replace( std::string &strBig, const std::string &strsrc, const std::string &strdst )
@@ -139,6 +165,32 @@ void CodeGen::init(){
     }
 }
 
+#pragma mark cocos2dx_3
+#ifdef Cocos2dX_3
+void CodeGen::preProcess_cocos2dx_3(){
+    //去掉 CCB类型里的"CC"
+    for (/*const*/ TypeName& item :m_listAssignMember) {
+        if(item.type.find("CC") != string::npos){
+            string l_strTypeFor3 = item.type.substr(2);
+            item.type = l_strTypeFor3;
+        }
+    }
+    
+    //更改m_baseClass
+    if(m_baseClass.find("CC") != string::npos){
+        m_baseClass = m_baseClass.substr(2);
+    }
+    
+    //去掉cocos2dClass的CC
+//    std::set<std::string>::iterator iter;
+//    for (iter = cocos2dClass.begin(); iter!=cocos2dClass.end(); iter++) {
+//        NSLog(@"%s", (*iter).c_str());
+//        string l_strTypeFor3 = (*iter).substr(2);
+//        (*iter).assign(l_strTypeFor3);
+//        //(*iter) = (*iter).substr(2);
+//    }
+}
+#endif
 
 #pragma mark HeadFile
 void CodeGen::GenerateClassDec()
@@ -165,6 +217,16 @@ void CodeGen::GenerateClassDec()
     
     m_header << "{}\n";
     
+    //destroy
+    m_header << "virtual ~ "<<m_className<<"(){\n";
+    for (const TypeName& item :m_listAssignMember) {
+        if (item.type == "string" || item.type == "std::string") {
+            continue;
+        }
+        m_header <<"//\tCC_SAFE_RELEASE_NULL(" << item.name << ");\n";
+    }
+    m_header<<"}\n\n";
+    
     //generate loader
     /*
      if (m_baseClass == "CCNode") {
@@ -185,11 +247,15 @@ void CodeGen::GenerateClassDec()
     string l_strLoader = m_loaderInnerClass;
     string_replace(l_strLoader, "%class_name%", m_className);
     string_replace(l_strLoader, "%loader_name%", m_className+"Loader");
-    if (m_baseClass == "CCNode") {
+    if (m_baseClass == "CCNode" || m_baseClass == "Node") {
         string_replace(l_strLoader, "%super_loader_name%", "CCNodeLoader");
     }
-    else if(m_baseClass == "CCLayer"){
+    else if(m_baseClass == "CCLayer" || m_baseClass == "Layer"){
+#ifdef Cocos2dX_3
+        string_replace(l_strLoader, "%super_loader_name%", "LayerLoader");
+#else
         string_replace(l_strLoader, "%super_loader_name%", "CCLayerLoader");
+#endif
     }
     m_header << l_strLoader<<"\n";
 }
@@ -270,6 +336,22 @@ void CodeGen::GenerateVisitMemberDefine(){
             m_header <<"extension::";
         }
         m_header<< item.type << "*&\t\t";
+        
+        string l_strFuncName;
+        if(item.name.find("m_") == 0){
+            l_strFuncName = item.name.substr(2);
+        }else{
+            l_strFuncName = item.name;
+        }
+        m_header << l_strFuncName << "(){ return " << item.name << "; }\n";
+    }
+    
+    m_header<<"\n //CustomMember visit function\n";
+    for (const TypeName& item : m_listCutomProperty) {
+        m_header << "\t";
+        m_header<< "inline ";
+
+        m_header<< item.type << "\t\t";
         
         string l_strFuncName;
         if(item.name.find("m_") == 0){
@@ -390,7 +472,7 @@ void CodeGen::GlueMenuCallBack()
     {
         m_cpp << "\tCCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this," << "\"" << item << "\"," << m_className << "::" << item << ");\n";
     }
-    m_cpp << "\treturn false;\n";
+    m_cpp << "\treturn NULL;\n";
     m_cpp << "}\n\n";
 }
 
@@ -404,7 +486,7 @@ void CodeGen::GlueControlCallBack()
     {
         m_cpp << "\tCCB_SELECTORRESOLVER_CCCONTROL_GLUE(this," << "\"" << item << "\"," << m_className << "::" << item << ");\n";
     }
-    m_cpp << "\treturn false;\n";
+    m_cpp << "\treturn NULL;\n";
     m_cpp << "}\n\n";
 }
 void CodeGen::GlueAssignMember()
@@ -433,19 +515,35 @@ void CodeGen::GlueCustomMember()
         m_cpp << "\t\t\t"<<item.name<< " = ";
         if (item.type == "string" || item.type == "std::string")
         {
+#ifdef Cocos2dX_3
+            m_cpp << "pCCBValue.asString();\n";
+#else
             m_cpp << "pCCBValue->getStringValue();\n";
+#endif
         }
         else if(item.type == "int")
         {
+#ifdef Cocos2dX_3
+            m_cpp << "pCCBValue.asInt();\n";
+#else
             m_cpp << "pCCBValue->getIntValue();\n";
+#endif
         }
         else if(item.type == "float")
         {
+#ifdef Cocos2dX_3
+            m_cpp << "pCCBValue.asFloat();\n";
+#else
             m_cpp << "pCCBValue->getFloatValue();\n";
+#endif
         }
         else if(item.type == "bool")
         {
+#ifdef Cocos2dX_3
+            m_cpp << "pCCBValue.asBool();\n";
+#else
             m_cpp << "pCCBValue->getBoolValue();\n";
+#endif
         }
         else
         {
