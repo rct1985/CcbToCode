@@ -64,7 +64,7 @@ static std::set<std::string> cocos2dClass =
     "LayerGradient",
     "Menu",
     "LabelBMFont",
-    "LabelTTF",
+    "Label",
     "ParticleSystem",
     "ParticleSystemQuad",
     "ParticleSystemPoint",
@@ -170,6 +170,12 @@ void CodeGen::init(){
 void CodeGen::preProcess_cocos2dx_3(){
     //去掉 CCB类型里的"CC"
     for (/*const*/ TypeName& item :m_listAssignMember) {
+        //CCLabelTTF -> Label
+        if(item.type == "CCLabelTTF"){
+            item.type = "Label";
+        }
+        
+        //去掉CC
         if(item.type.find("CC") != string::npos){
             string l_strTypeFor3 = item.type.substr(2);
             item.type = l_strTypeFor3;
