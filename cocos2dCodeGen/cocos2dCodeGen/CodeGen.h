@@ -14,7 +14,7 @@
 #include <vector>
 
 //定义用于支持cocos2dx_3
-#define Cocos2dX_3
+//#define Cocos2dX_3
 
 class CodeGen
 {

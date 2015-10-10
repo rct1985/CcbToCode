@@ -31,3 +31,10 @@
 # >=-2013-10-15 针对绑定项必须指定Doc_Root_Var 的报错
 # 1. 对象取了名字，但没有选定Doc_Root_Var 报警告
 # 2. selector 取了名字，但没有选定Target_Root_Var 报警告
+
+#>=-2015-10-10 潘的建议下修改
+1. 在通过修改plist文件名, 改为codeTemplateCpp.plist (还要改代码里的一个宏 "Cocos2dX_3") 
+2. 控制生成,支持cocos2dx 2.x的版本, 还是支持3.x的版本
+3. 修改一些类型, 解决编译警告
+4. 支持create加参数的方法, 用于指定ccbi文件
+

@@ -71,11 +71,15 @@ int main(int argc, const char * argv[])
     NSString* ccbDir  = [NSString stringWithFormat:@"%s", argv[1]];
     NSString* targetDir = [NSString stringWithFormat:@"%s", argv[2]];
     NSString* targetCtrlDir = [NSString stringWithFormat:@"%s", argv[3]];
+    //NSString* cocos2dVersion = [NSString stringWithFormat:@"%s", argv[4]];
+    //NSString* plistFile = [NSString stringWithFormat:@"%s", argv[5]];
+    
     NSLog(@"current dir:%@",currentDir);
     NSLog(@"ccbDir dir:%@",ccbDir);
     NSLog(@"targetDir dir:%@",targetDir);
     NSLog(@"targetCtrlDir dir:%@", targetCtrlDir);
-    
+    //NSLog(@"cocos2dVersion :%@", cocos2dVersion);
+    //NSLog(@"plistFile :%@", plistFile);
 
     NSError *error = nil;
     //NSArray *fileList = [[NSArray alloc] init];

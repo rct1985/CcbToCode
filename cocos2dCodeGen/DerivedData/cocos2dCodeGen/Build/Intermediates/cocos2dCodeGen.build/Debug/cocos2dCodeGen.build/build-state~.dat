@@ -1,151 +1,0 @@
-Tcocos2dCodeGen
-v5
-r1
-cCheck dependencies
-cCompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/cocos2dCodeGen normal x86_64
-cPBXCp cocos2dCodeGen/codeTemplateCpp.plist DerivedData/cocos2dCodeGen/Build/Products/Debug/codeTemplateCpp.plist
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
-c000000005130312F00000000000000AA
-t1362112815
-s170
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.o
-t2
-s0
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/cocos2dCodeGen.LinkFileList
-c00000000523801550000000000000244
-t1379402069
-s580
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.o
-t2
-s0
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.o
-t2
-s0
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/Match3.ccb
-t1379397449
-s29456
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/cocos2dCodeGen
-t2
-s0
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/codeTemplateCpp.plist
-t1379401993
-s3146
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.h
-c000000005237FD630000000000000955
-t1379401059
-s2389
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mm
-c000000005237FF970000000000002C47
-t1379401623
-s11335
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/Match3.ccb
-c000000005177C8A50000000000007310
-t1366804645
-s29456
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.h
-c000000005237FC74000000000000038D
-t1379400820
-s909
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mm
-c000000005237FC7200000000000010AF
-t1379400818
-s4271
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/codeTemplateCpp.plist
-c0000000051B05FFC0000000000000DC2
-t1370513404
-s3522
-
-N/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mm
-c000000005237FCCF0000000000000DC0
-t1379400911
-s3520
-i<iostream>
-i"code1.h"
-i"CodeGen.h"
-i<fstream>
-
-CBuild AST from /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mm
-r0
-
-CBuild AST from /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mm
-r0
-
-CBuild AST from /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mm
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies0c3a21d538e8b741^c1e224d538e8b741^---0#1#0#--18"Check dependencies36"6456C716-7803-4672-82EC-4AB027E5A97E-
-
-CCompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s401094869.146029
-e401094870.267547
-r1
-xCompileC
-xDerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.o
-x/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mm
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mmb37c25d538e8b741^e57d44d638e8b741^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mm0000000000000000^4081"CompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.o cocos2dCodeGen/CodeGen.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.8.xctoolchain/usr/bin/clang -x objective-c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -DTARGET_OS_MAC -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-generated-files.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-own-target-headers.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-all-target-headers.hmap -iquote /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-project-headers.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/include -Icocos2dCodeGen/libs/cocos2dx/kazmath/include -Icocos2dCodeGen/libs/cocos2dx -Icocos2dCodeGen/libs/CocosDenshion/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/libxml2 -Icocos2dCodeGen/libs/cocos2dx/include -Icocos2dCodeGen/libs/cocos2dx/platform/third_party/ios -Icocos2dCodeGen/libs/cocos2dx/platform/ios -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/DerivedSources/x86_64 -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/DerivedSources -F/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug -MMD -MT dependencies -MF /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.d --serialize-diagnostics /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.dia -c /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/CodeGen.mm -o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/CodeGen.o36"F1550393-F7D3-413E-A7EC-65E2E3023B73-
-
-CCompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s401094869.146027
-e401094870.030421
-r1
-xCompileC
-xDerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.o
-x/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mm
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mmc07525d538e8b741^47c907d638e8b741^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mm0000000000000000^4069"CompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.o cocos2dCodeGen/code1.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.8.xctoolchain/usr/bin/clang -x objective-c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -DTARGET_OS_MAC -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-generated-files.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-own-target-headers.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-all-target-headers.hmap -iquote /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-project-headers.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/include -Icocos2dCodeGen/libs/cocos2dx/kazmath/include -Icocos2dCodeGen/libs/cocos2dx -Icocos2dCodeGen/libs/CocosDenshion/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/libxml2 -Icocos2dCodeGen/libs/cocos2dx/include -Icocos2dCodeGen/libs/cocos2dx/platform/third_party/ios -Icocos2dCodeGen/libs/cocos2dx/platform/ios -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/DerivedSources/x86_64 -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/DerivedSources -F/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug -MMD -MT dependencies -MF /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.d --serialize-diagnostics /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.dia -c /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/code1.mm -o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/code1.o36"30D1276C-609F-47D7-B7B2-82009118B495-
-
-CCompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s401094869.146023
-e401094870.126291
-r1
-xCompileC
-xDerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.o
-x/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mm
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mme67425d538e8b741^9b5420d638e8b741^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mm0000000000000000^4063"CompileC DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.o cocos2dCodeGen/main.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.8.xctoolchain/usr/bin/clang -x objective-c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -DTARGET_OS_MAC -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-generated-files.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-own-target-headers.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-all-target-headers.hmap -iquote /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/cocos2dCodeGen-project-headers.hmap -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/include -Icocos2dCodeGen/libs/cocos2dx/kazmath/include -Icocos2dCodeGen/libs/cocos2dx -Icocos2dCodeGen/libs/CocosDenshion/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/libxml2 -Icocos2dCodeGen/libs/cocos2dx/include -Icocos2dCodeGen/libs/cocos2dx/platform/third_party/ios -Icocos2dCodeGen/libs/cocos2dx/platform/ios -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/DerivedSources/x86_64 -I/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/DerivedSources -F/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug -MMD -MT dependencies -MF /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.dia -c /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/cocos2dCodeGen/main.mm -o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/main.o36"6CA7F323-6592-4CAE-9FD5-26620C1E7365-
-
-CLd /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/cocos2dCodeGen normal x86_64
-s401094870.274309
-e401094870.295383
-r1
-xLd
-x/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/cocos2dCodeGen
-xnormal
-xx86_64
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection135"Link /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/cocos2dCodeGen244746d638e8b741^7c9e4bd638e8b741^---0#0#0#--1066"Ld DerivedData/cocos2dCodeGen/Build/Products/Debug/cocos2dCodeGen normal x86_64    cd /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.8.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug -F/Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug -filelist /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Intermediates/cocos2dCodeGen.build/Debug/cocos2dCodeGen.build/Objects-normal/x86_64/cocos2dCodeGen.LinkFileList -mmacosx-version-min=10.8 -stdlib=libc++ -fobjc-link-runtime -o /Users/raochongtao/Tools/cocosBuilder/cocos2dCodeGen/cocos2dCodeGen/DerivedData/cocos2dCodeGen/Build/Products/Debug/cocos2dCodeGen36"35BEEDC9-24EB-4F8A-BFAF-5BDE2BC0F584-
-
-CPBXCp cocos2dCodeGen/Match3.ccb DerivedData/cocos2dCodeGen/Build/Products/Debug/Match3.ccb
-r0
-
-CPBXCp cocos2dCodeGen/codeTemplateCpp.plist DerivedData/cocos2dCodeGen/Build/Products/Debug/codeTemplateCpp.plist
-r0
-
